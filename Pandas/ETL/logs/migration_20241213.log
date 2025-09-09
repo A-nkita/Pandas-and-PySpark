@@ -1,0 +1,50 @@
+2024-12-13 22:22:41,823 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:22:41,960 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:22:41,960 [INFO] - Starting migration for table: mysql_table1
+2024-12-13 22:22:41,976 [ERROR] - Error migrating table mysql_table1: (1146, "Table 'pandas_study.mysql_table1' doesn't exist")
+2024-12-13 22:22:41,977 [INFO] - Starting migration for table: mysql_table2
+2024-12-13 22:22:41,977 [ERROR] - Error migrating table mysql_table2: (1146, "Table 'pandas_study.mysql_table2' doesn't exist")
+2024-12-13 22:22:41,978 [INFO] - Data migration completed successfully.
+2024-12-13 22:26:16,721 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:26:16,743 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:26:16,743 [INFO] - Starting migration for table: mysql_table1
+2024-12-13 22:26:16,751 [ERROR] - Error migrating table mysql_table1: (1146, "Table 'pandas_study.mysql_table1' doesn't exist")
+2024-12-13 22:26:16,751 [INFO] - Starting migration for table: mysql_table2
+2024-12-13 22:26:16,751 [ERROR] - Error migrating table mysql_table2: (1146, "Table 'pandas_study.mysql_table2' doesn't exist")
+2024-12-13 22:26:16,751 [INFO] - Data migration completed successfully.
+2024-12-13 22:29:22,264 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:29:22,284 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:29:22,284 [INFO] - Starting migration for table: Online_shop to Dumped_shop
+2024-12-13 22:29:22,487 [INFO] - Fetched 12330 rows from MySQL table Online_shop.
+2024-12-13 22:29:22,532 [ERROR] - Error migrating table Online_shop: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'Dumped_shop'. (208) (SQLExecute); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2024-12-13 22:29:22,532 [INFO] - Data migration completed successfully.
+2024-12-13 22:30:57,827 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:30:57,847 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:30:57,848 [INFO] - Starting migration for table: Online_shop to Dumped_shop
+2024-12-13 22:30:58,035 [INFO] - Fetched 12330 rows from MySQL table Online_shop.
+2024-12-13 22:30:58,484 [INFO] - Inserted 12330 rows into MSSQL table Dumped_shop.
+2024-12-13 22:30:58,485 [INFO] - Data migration completed successfully.
+2024-12-13 22:32:35,431 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:32:35,449 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:32:35,451 [INFO] - Starting migration for table: Online_shop to Dumped_shop
+2024-12-13 22:32:35,633 [INFO] - Fetched 12330 rows from MySQL table Online_shop.
+2024-12-13 22:32:35,948 [INFO] - Inserted 12330 rows into MSSQL table Dumped_shop.
+2024-12-13 22:32:35,950 [INFO] - Data migration completed successfully.
+2024-12-13 22:34:55,063 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:34:55,087 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:34:55,088 [INFO] - Starting migration for table: Online_shop to Dumped_shop
+2024-12-13 22:34:55,294 [INFO] - Fetched 12330 rows from MySQL table Online_shop.
+2024-12-13 22:34:55,572 [INFO] - Inserted 12330 rows into MSSQL table Dumped_shop.
+2024-12-13 22:34:55,572 [INFO] - Data migration completed successfully.
+2024-12-13 22:35:44,991 [INFO] - Connected to MySQL database successfully.
+2024-12-13 22:35:44,997 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 22:35:44,998 [INFO] - Starting migration for table: Online_shop to Dumped_shop
+2024-12-13 22:35:45,235 [INFO] - Fetched 12330 rows from MySQL table Online_shop.
+2024-12-13 22:35:45,620 [INFO] - Inserted 12330 rows into MSSQL table Dumped_shop.
+2024-12-13 22:35:45,621 [INFO] - Data migration completed successfully.
+2024-12-13 23:05:13,920 [INFO] - Connected to MySQL database successfully.
+2024-12-13 23:05:13,940 [INFO] - Connected to MSSQL database using Windows Authentication.
+2024-12-13 23:05:13,940 [INFO] - Starting migration for table: Online_shop to Dumped_shop
+2024-12-13 23:05:14,173 [INFO] - Fetched 12330 rows from MySQL table Online_shop.
+2024-12-13 23:05:14,525 [INFO] - Inserted 12330 rows into MSSQL table Dumped_shop.
+2024-12-13 23:05:14,526 [INFO] - Data migration completed successfully.

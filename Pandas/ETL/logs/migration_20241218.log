@@ -1,0 +1,2 @@
+2024-12-18 21:53:47,384 [ERROR] - Error connecting to MySQL: (1049, "Unknown database 'pandas_study'")
+2024-12-18 21:53:48,226 [INFO] - NumExpr defaulting to 8 threads.

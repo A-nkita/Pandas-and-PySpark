@@ -1,0 +1,20 @@
+{
+    "mysql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "root",
+        "database": "Pandas_study"
+    },
+    "mssql": {
+        "driver": "{ODBC Driver 17 for SQL Server}",
+        "server": "Ankita",
+        "database": "Pandas_TEST",
+        "trusted_connection": "yes"
+    },
+    "table_mappings": [
+        {
+            "mysql_table": "Online_shop",
+            "mssql_table": "Dumped_shop"
+        }
+    ]
+}
