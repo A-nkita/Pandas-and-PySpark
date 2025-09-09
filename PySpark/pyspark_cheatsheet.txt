@@ -1,0 +1,143 @@
+=======================================
+📘 pyspark_cheatsheet.txt
+=======================================
+
+✨ BASIC SETUP
+---------------------------------------
+from pyspark.sql import SparkSession
+
+# Create SparkSession
+spark = SparkSession.builder.appName("MyApp").getOrCreate()
+
+# Check version
+spark.version
+
+# Stop Spark
+spark.stop()
+
+=======================================
+📝 CREATE DATAFRAME
+---------------------------------------
+# From list of tuples
+data = [("Alice", 28), ("Bob", 35)]
+columns = ["Name", "Age"]
+df = spark.createDataFrame(data, columns)
+
+# From CSV file
+df = spark.read.csv("file.csv", header=True, inferSchema=True)
+
+# From JSON file
+df = spark.read.json("file.json")
+
+# From RDD
+rdd = spark.sparkContext.parallelize(data)
+df = rdd.toDF(columns)
+
+=======================================
+🔍 VIEW & EXPLORE
+---------------------------------------
+df.show()               # Top 20 rows
+df.show(5)              # First 5 rows
+df.printSchema()        # Schema info
+df.columns              # Column names
+df.describe().show()    # Summary stats
+
+=======================================
+📊 DATAFRAME OPERATIONS
+---------------------------------------
+df.select("Name").show()                         
+df.filter(df.Age > 30).show()                    
+df.withColumnRenamed("Age", "Years").show()      
+df.withColumn("NewCol", df.Age + 10).show()      
+df.drop("Age").show()                            
+
+=======================================
+🔁 TRANSFORMATIONS
+---------------------------------------
+df2 = df.select(df.Name, df.Age + 1)
+df3 = df.filter(df.Age > 30)
+df4 = df.dropDuplicates()
+df5 = df.orderBy("Age", ascending=False)
+
+=======================================
+🧮 AGGREGATIONS
+---------------------------------------
+from pyspark.sql.functions import count, avg, sum
+
+df.groupBy("Name").agg(avg("Age")).show()
+df.agg(count("*")).show()
+df.groupBy("Name").count().show()
+
+=======================================
+🧑‍🍳 SQL OPERATIONS
+---------------------------------------
+df.createOrReplaceTempView("people")
+spark.sql("SELECT * FROM people WHERE Age > 30").show()
+
+=======================================
+📦 WRITE TO FILE
+---------------------------------------
+df.write.csv("output_folder")
+df.write.json("output_folder")
+df.write.parquet("output_folder")
+
+=======================================
+💡 CACHE & PERSIST
+---------------------------------------
+df.cache()
+df.persist()
+df.unpersist()
+
+=======================================
+⚙️ CONFIG & CONTEXT
+---------------------------------------
+sc = spark.sparkContext        
+sc.getConf().getAll()          
+sc.parallelize([1,2,3])        
+
+=======================================
+🔄 RDD OPERATIONS (BASIC)
+---------------------------------------
+rdd = sc.parallelize([1,2,3,4])
+rdd.map(lambda x: x*x).collect()
+rdd.filter(lambda x: x > 2).collect()
+rdd.reduce(lambda x,y: x+y)
+
+=======================================
+🎯 SHORT Q&A (THEORY RECAP)
+---------------------------------------
+1. What is PySpark?
+- Python API for Apache Spark to handle big data using Python.
+
+2. Spark Architecture?
+- Driver, Cluster Manager, Executors, Tasks.
+
+3. What are RDDs?
+- Low-level, fault-tolerant, distributed data objects.
+
+4. What are DataFrames?
+- High-level structured distributed data with schema.
+
+5. Transformations vs Actions?
+- Transformations are lazy (map, filter), Actions trigger execution (collect, show).
+
+6. SparkSession?
+- Entry point to Spark.
+
+7. Catalyst Optimizer?
+- Query optimizer in Spark SQL/DataFrame.
+
+8. Tungsten?
+- Spark execution engine for memory & speed optimization.
+
+9. PySpark vs Pandas?
+- PySpark is for distributed large-scale data, Pandas for local.
+
+10. Partitions?
+- Logical splits of data for parallel processing.
+
+11. Lazy Evaluation?
+- Execution only triggered when action is called.
+
+=======================================
+✅ END OF CHEATSHEET

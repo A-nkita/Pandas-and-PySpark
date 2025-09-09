@@ -1,0 +1,56 @@
+1️⃣ What is PySpark?
+PySpark is the Python API for Apache Spark, allowing you to write Spark applications using Python to process large-scale data across clusters.
+
+---
+
+2️⃣ Explain Spark architecture in short.
+- Driver Program: Your main process that defines SparkContext and manages jobs.
+- Cluster Manager: Allocates resources (YARN, Mesos, Kubernetes, standalone).
+- Executors: Worker processes on cluster nodes executing tasks and storing data.
+- Tasks: Units of work sent to executors by the driver.
+
+---
+
+3️⃣ What are RDDs?
+Resilient Distributed Datasets, fault-tolerant, immutable collections of data distributed across nodes, enabling parallel processing with transformations and actions.
+
+---
+
+4️⃣ What are DataFrames in PySpark?
+Distributed collections of data organized into columns, like tables or Pandas DataFrames, with schema support and optimizations.
+
+---
+
+5️⃣ Explain Transformations vs Actions.
+- Transformations (lazy): Define operations on data (map, filter, select).
+- Actions (trigger execution): Return results (collect, count, show).
+
+---
+
+6️⃣ What is SparkSession?
+Entry point to use Spark functionality in PySpark, allowing access to DataFrame and SQL APIs.
+
+---
+
+7️⃣ What is Catalyst Optimizer?
+Spark’s query optimizer that optimizes logical and physical query plans for better performance in DataFrames and Spark SQL.
+
+---
+
+8️⃣ What is Tungsten?
+Spark’s execution engine providing memory management and code generation for optimized execution.
+
+---
+
+9️⃣ How is PySpark different from Pandas?
+PySpark processes distributed data across clusters, handling TBs of data, while Pandas processes data on a single machine in memory.
+
+---
+
+10️⃣ What is a partition in PySpark?
+A logical division of data enabling parallelism, each partition is processed by a separate task on cluster nodes.
+
+---
+
+11️⃣ What is lazy evaluation in PySpark?
+Transformations are not executed immediately; Spark builds a logical plan and executes only when an action is called.

@@ -1,0 +1,10 @@
+Salesperson,Region,Sales,Deals
+Aarti,East,10000,5
+Ramesh,West,45000,8
+Aarti,East,30000,6
+Sneha,East,12000,4
+Ramesh,West,,3
+Ravi,North,28000,7
+Sneha,,9000,2
+Vikram,West,20000,5
+Ramesh,West,5000,1

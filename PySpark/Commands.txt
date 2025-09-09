@@ -1,0 +1,110 @@
+=======================================
+✨ Basic Setup
+=======================================
+from pyspark.sql import SparkSession
+
+# Create SparkSession
+spark = SparkSession.builder.appName("MyApp").getOrCreate()
+
+# Check Spark version
+spark.version
+
+# Stop Spark session
+spark.stop()
+
+=======================================
+📝 Create DataFrame
+=======================================
+# From list of tuples
+data = [("Alice", 28), ("Bob", 35)]
+columns = ["Name", "Age"]
+df = spark.createDataFrame(data, columns)
+
+# From CSV
+df = spark.read.csv("file.csv", header=True, inferSchema=True)
+
+# From JSON
+df = spark.read.json("file.json")
+
+# From existing RDD
+rdd = spark.sparkContext.parallelize(data)
+df = rdd.toDF(columns)
+
+=======================================
+🔍 View & Explore
+=======================================
+df.show()               # Display top 20 rows
+df.show(5)              # Display top 5 rows
+df.printSchema()        # Print schema
+df.columns              # List of column names
+df.describe().show()    # Summary stats
+
+=======================================
+📊 DataFrame Operations
+=======================================
+df.select("Name").show()                         # Select column
+df.filter(df.Age > 30).show()                    # Filter rows
+df.withColumnRenamed("Age", "Years").show()      # Rename column
+df.withColumn("NewCol", df.Age + 10).show()      # Add new column
+df.drop("Age").show()                            # Drop column
+
+=======================================
+🔁 Transformations
+=======================================
+df2 = df.select(df.Name, df.Age + 1)
+df3 = df.filter(df.Age > 30)
+df4 = df.dropDuplicates()
+df5 = df.orderBy("Age", ascending=False)
+
+=======================================
+🧮 Aggregations
+=======================================
+from pyspark.sql.functions import count, avg, sum
+
+df.groupBy("Name").agg(avg("Age")).show()
+df.agg(count("*")).show()
+df.groupBy("Name").count().show()
+
+=======================================
+🧑‍🍳 SQL Operations
+=======================================
+# Register temporary view
+df.createOrReplaceTempView("people")
+
+# Run SQL query
+spark.sql("SELECT * FROM people WHERE Age > 30").show()
+
+=======================================
+📦 Write to File
+=======================================
+# CSV
+df.write.csv("output_folder")
+
+# JSON
+df.write.json("output_folder")
+
+# Parquet (efficient format)
+df.write.parquet("output_folder")
+
+=======================================
+💡 Cache & Persist
+=======================================
+df.cache()               # Cache in memory
+df.persist()             # Cache in memory/disk
+df.unpersist()           # Remove cache
+
+=======================================
+⚙️ Config & Context
+=======================================
+sc = spark.sparkContext        # SparkContext
+sc.getConf().getAll()          # Show Spark configs
+sc.parallelize([1,2,3])        # Create RDD
+
+=======================================
+🔄 RDD Operations (Basic)
+=======================================
+rdd = sc.parallelize([1,2,3,4])
+rdd.map(lambda x: x*x).collect()
+rdd.filter(lambda x: x > 2).collect()
+rdd.reduce(lambda x,y: x+y)
+
